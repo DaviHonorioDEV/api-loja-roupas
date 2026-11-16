@@ -1,0 +1,21 @@
+# Ambiente virtual
+venv/
+
+# Segredos (nunca vão para o GitHub)
+.env
+
+# Cache do Python e dos testes
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Bancos SQLite (banco de teste)
+*.db
+
+# Logs e relatórios gerados pela API
+logs/*.txt
+dados/relatorios/
+
+# macOS e VS Code
+.DS_Store
+.vscode/
