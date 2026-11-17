@@ -3,7 +3,12 @@ from fastapi import Depends, FastAPI, HTTPException
 from sqlalchemy import text
 from sqlalchemy.orm import Session
 
-from app.database import get_db
+from app import models
+from app.database import engine, get_db
+
+# Cria no banco as tabelas que ainda não existem
+# (não altera tabelas que já existem: veja o aviso da etapa 2)
+models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title="API Loja de Roupas",

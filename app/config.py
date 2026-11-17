@@ -6,7 +6,9 @@ from dotenv import load_dotenv
 # Carrega as variáveis do arquivo .env para o ambiente do programa
 load_dotenv()
 
-DATABASE_URL = os.getenv("DATABASE_URL")
+# O "" é o valor padrão se a variável não existir.
+# Assim DATABASE_URL é sempre texto (str), nunca None.
+DATABASE_URL = os.getenv("DATABASE_URL", "")
 
 # Falha cedo e com mensagem clara, em vez de um erro estranho mais tarde
 if not DATABASE_URL:
